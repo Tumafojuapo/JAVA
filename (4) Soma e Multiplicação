@@ -1,0 +1,38 @@
+package diversos;
+
+import java.util.Scanner;
+
+/**
+ * @author tuma
+ */
+public class Numeros {
+
+   
+    public static void main(String[] args) {
+        
+        System.out.println("=======================================");
+        System.out.println(" Trabalhando com Operações Matemáticas");
+        System.out.println("=======================================");
+        int v1;
+        int v2;
+        int soma;
+        int multiplicacao;
+        
+        Scanner numero = new Scanner(System.in);
+        System.out.print("Digite um número");
+        v1 = numero.nextInt();
+        System.out.print("Digite outro número: ");
+        v2 = numero.nextInt();
+        soma = v1+v2;
+        multiplicacao = v1 * v2;
+        
+        System.out.println("================================");
+        System.out.println(" Soma e Multiplicação de Números");
+        System.out.println("================================");
+        System.out.printf("%s%d","A soma é igual: ",soma);
+        System.out.printf("%s%d","\nA multiplicação é igual: ",multiplicacao);
+        
+        
+    }
+    
+}
