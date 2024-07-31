@@ -1,0 +1,14 @@
+package idioma;
+
+import java.util.Locale;
+
+public class IdiomaDoSistema {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Locale loc = Locale.getDefault();
+		System.out.print("O Idioma do Sistema é: ");
+		System.out.print(loc);
+	}
+}
