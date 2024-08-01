@@ -44,8 +44,7 @@ public class FaixaSolidaria {
         System.out.println("=========================================");
         System.out.println(" Resultado dos Custos Profissional");
         System.out.println("=========================================");
-        precogasolina = 6.13;
-        custogasolina = (qd/15)*precogasolina;
+        custogasolina = (qd/15)*pgas;
         System.out.printf("%s%1.2f","\nTotal Gasto Combustível: ",custogasolina);
         System.out.printf("%s%1.2f","\nTotal Gasto Estacionamento: ",estac);
         System.out.printf("%s%1.2f","\nTotal Gasto Pedágio: ",pedg);
