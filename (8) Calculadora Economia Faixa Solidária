@@ -28,8 +28,11 @@ public class FaixaSolidaria {
         double estac;
         double pedg;
         double custogasolina;
-        double precogasolina;
-        double custofinal;
+        double custoparcial;
+        double descontos;
+        double descontoparcial;
+        double custototal;
+        double economia;
         
         Scanner input = new Scanner(System.in);
         
@@ -42,65 +45,37 @@ public class FaixaSolidaria {
         System.out.print("Gasto Total com Pedágio R$:");
         pedg = input.nextDouble();
         System.out.println("=========================================");
-        System.out.println(" Resultado dos Custos Profissional");
+        System.out.println(" Relatório de Custos da Viagem");
         System.out.println("=========================================");
         custogasolina = (qd/15)*pgas;
         System.out.printf("%s%1.2f","\nTotal Gasto Combustível: ",custogasolina);
         System.out.printf("%s%1.2f","\nTotal Gasto Estacionamento: ",estac);
         System.out.printf("%s%1.2f","\nTotal Gasto Pedágio: ",pedg);
-        custofinal = custogasolina+estac+pedg;
+        custoparcial = custogasolina+estac+pedg;
         System.out.println();
-        System.out.printf("%s%1.2f","\nTotal de Gasto: ",custofinal);
-        System.out.println();
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println();
-        System.out.println("=========================================");
-        System.out.println(" Calculdadora de Economia Faixa Solidária");
-        System.out.println("=========================================");
-        double qds;
-        double pgass;
-        double estacs;
-        double pedgs;
-        double custogasolinas;
-        double custofinals;
-        double descontos;
-        double descontofinals;
-        double descontopedgs;
+        descontos = 0.18;
+        descontoparcial = custoparcial * descontos;
+        custototal = custoparcial - descontoparcial;
+        economia = custoparcial - custototal;
+        int r;
+        System.out.print("\nFaz parte do programa Faixa Solidária?");
+        System.out.print("\nDigite [1]Sim ou [0]Não: ");
+        r = input.nextInt();
+        if (r == 1){
+            System.out.printf("%s%1.2f","\nTotal de Gasto Programa Faixa Solidária: ",custototal);
+            System.out.printf("%s%1.2f","\nParabêns!Você economizou R$:",economia);
+            System.out.print("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            
+            
+            
+        }else {
+            System.out.printf("%s%1.2f","\nTotal de Gasto Individual: ",custoparcial);
+            System.out.print("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
+            System.out.print("\nVocê deixou de economizar");
+            System.out.printf("%s%1.2f"," R$: ",economia);
+            
+        }
         
-        Scanner solidario = new Scanner(System.in);
-        
-        System.out.print("Quantos kilômetros foi dirigido: ");
-        qds = solidario.nextDouble();
-        System.out.print("Preço do litro da gasolina R$:");
-        pgass = solidario.nextDouble();
-        System.out.print("Gasto Total com Estacionamento R$: ");
-        estacs = solidario.nextDouble();
-        System.out.print("Gasto Total com Pedágio R$:");
-        pedgs = solidario.nextDouble();
-        System.out.println("=========================================");
-        System.out.println(" Resultado dos Custos Normais");
-        System.out.println("=========================================");
-        descontos = 0.038;
-        custogasolinas = (qds/15)*descontos;
-        System.out.printf("%s%1.2f","\nTotal Gasto Combustível: ",custogasolina);
-        System.out.printf("%s%1.2f","\nTotal Gasto Estacionamento: ",estacs);
-        System.out.printf("%s%1.2f","\nTotal Gasto Pedágio: ",pedgs);
-        descontofinals = pedgs *descontos;
-        descontopedgs =  pedgs - descontofinals;
-        custofinals = custogasolinas+estacs+descontopedgs;
-        System.out.println();
-        System.out.printf("%s%1.2f","\nTotal de Gasto: ",custofinals);
-        System.out.println("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.println();
-        
-        System.out.println("=========================================");
-        System.out.println(" Diferença entre Profissional e Solidário");
-        System.out.println("=========================================");
-        System.out.println();
-        System.out.println("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
-        System.out.printf("%s%1.2f","\nTotal de Gasto Profissional: ",custofinal);
-        System.out.printf("%s%1.2f","\nTotal de Gasto Solidário: ",custofinals);
-        System.out.println("\nxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         
         
     }
